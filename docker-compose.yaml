@@ -1,0 +1,13 @@
+version: "3"
+services:
+    huikaapp:
+        image: "tomcat:8"
+        restart: always
+        container_name: huika_app
+        ports:
+          - 2020:8080
+        volumes:
+          - ./conf/server.xml:/usr/local/tomcat/conf/server.xml
+          - ./logs:/usr/local/tomcat/logs
+          - ./webapps://usr/local/tomcat/webapps/
+          - /etc/localtime:/etc/localtime:ro
